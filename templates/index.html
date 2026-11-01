@@ -1,0 +1,578 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Fixed Navigation Bar -->
+<header className="fixed top-0 left-0 right-0 z-40 py-4 bg-[#06080d]/90 backdrop-blur-xl border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+    <!-- Brand Logo -->
+    <a href="#hero" class="text-2xl font-black tracking-tight flex items-baseline text-white">
+      <span>Mayuri</span>
+      <span class="text-3xl font-extrabold leading-none text-cyan-400">.</span>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden lg:flex items-center gap-1 px-4 py-1.5 rounded-full border border-white/10 bg-[#0b0f19]/80 backdrop-blur-md">
+      <a href="#about" class="desktop-nav-link px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white transition-all">About</a>
+      <a href="#experience" class="desktop-nav-link px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white transition-all">Experience</a>
+      <a href="#projects" class="desktop-nav-link px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white transition-all">Projects</a>
+      <a href="#skills" class="desktop-nav-link px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white transition-all">Skills</a>
+      <a href="#education" class="desktop-nav-link px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white transition-all">Education</a>
+      <a href="#contact" class="desktop-nav-link px-3.5 py-1.5 text-xs font-medium text-slate-300 hover:text-white transition-all">Contact</a>
+    </nav>
+
+    <!-- Right Controls -->
+    <div class="hidden sm:flex items-center gap-3">
+      <button type="button" class="theme-toggle-btn p-2 rounded-full border border-white/10 bg-[#0b0f19] text-slate-300 hover:text-white transition-all" title="Toggle Light/Dark Theme">
+        <i class="fa-solid fa-moon text-sm text-cyan-400"></i>
+      </button>
+
+      <a href="#contact" class="inline-flex items-center justify-center gap-2 px-5 py-2 text-xs sm:text-sm font-semibold text-slate-950 rounded-full bg-gradient-to-r from-cyan-400 to-sky-400 hover:from-cyan-300 hover:to-sky-300 shadow-[0_0_20px_rgba(34,211,238,0.4)] transition-all">
+        <span>Let's Connect</span>
+        <i class="fa-solid fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+
+    <!-- Mobile Drawer Trigger -->
+    <div class="flex lg:hidden items-center gap-2">
+      <button type="button" class="theme-toggle-btn p-2.5 rounded-xl border border-white/10 bg-slate-900 text-slate-300">
+        <i class="fa-solid fa-moon text-sm"></i>
+      </button>
+      <button id="mobile-menu-btn" type="button" class="p-2.5 rounded-xl border border-white/10 bg-slate-900 text-slate-300">
+        <i class="fa-solid fa-bars text-lg"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="hidden fixed inset-x-4 top-20 z-50 p-5 rounded-2xl border border-white/15 bg-[#080d1a]/98 text-white backdrop-blur-2xl shadow-2xl lg:hidden">
+    <div class="flex flex-col gap-2">
+      <a href="#about" class="mobile-nav-link px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-white/10">About</a>
+      <a href="#experience" class="mobile-nav-link px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-white/10">Experience</a>
+      <a href="#projects" class="mobile-nav-link px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-white/10">Projects</a>
+      <a href="#skills" class="mobile-nav-link px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-white/10">Skills</a>
+      <a href="#education" class="mobile-nav-link px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-white/10">Education</a>
+      <a href="#contact" class="mobile-nav-link px-4 py-2.5 rounded-xl text-sm font-medium hover:bg-white/10">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main class="relative z-20">
+  
+  <!-- HERO SECTION -->
+  <section id="hero" class="relative min-h-screen pt-32 sm:pt-36 lg:pt-40 pb-16 flex flex-col justify-center overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left Column -->
+        <div class="lg:col-span-7 flex flex-col items-start text-left lg:pr-6">
+          
+          <!-- Availability Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium mb-4 text-cyan-400 bg-cyan-950/40 border border-cyan-500/40 shadow-[0_0_20px_rgba(0,240,255,0.25)]">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span class="tracking-wide uppercase font-semibold">AVAILABLE FOR SOFTWARE &amp; CLOUD ROLES</span>
+          </div>
+
+          <!-- Greeting Tag -->
+          <p class="text-xs sm:text-sm font-mono tracking-widest uppercase font-semibold mb-2 text-cyan-400">
+            HELLO, I'M
+          </p>
+
+          <!-- Headline Name -->
+          <h1 class="text-4xl sm:text-6xl xl:text-7xl font-black tracking-tight mb-3 text-white">
+            MAYURI CHOURASE
+          </h1>
+
+          <!-- Role & Specialization -->
+          <div class="mb-5 space-y-2">
+            <h2 class="text-xl sm:text-2xl font-bold text-slate-100">
+              {{ personal_info.role }}
+            </h2>
+            <div class="text-xs sm:text-sm font-mono font-semibold tracking-wider uppercase flex flex-wrap items-center gap-2 text-cyan-400">
+              <span>PYTHON</span>
+              <span class="text-slate-500">•</span>
+              <span>CLOUD TECHNOLOGIES</span>
+              <span class="text-slate-500">•</span>
+              <span>AWS &amp; AMAZON CONNECT</span>
+              <span class="text-slate-500">•</span>
+              <span>SQL</span>
+            </div>
+          </div>
+
+          <!-- Description Paragraph -->
+          <p class="text-sm sm:text-base max-w-xl mb-7 leading-relaxed text-slate-300">
+            {{ personal_info.bio }}
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-4 mb-7 w-full sm:w-auto">
+            <a href="#projects" class="inline-flex items-center justify-center gap-2.5 px-6 sm:px-7 py-3 rounded-full font-bold text-xs sm:text-sm text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-400 to-cyan-300 shadow-[0_0_30px_rgba(0,240,255,0.45)] hover:scale-105 transition-all">
+              <span>View Academic Projects</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+
+            <button id="resume-download-btn" type="button" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full font-semibold text-xs sm:text-sm text-slate-200 bg-[#0b0f19]/90 border border-cyan-500/30 hover:border-cyan-400 hover:text-white transition-all cursor-pointer">
+              <i class="fa-solid fa-download text-cyan-400"></i>
+              <span>Download Resume</span>
+            </button>
+          </div>
+
+          <!-- Social Links & Metadata -->
+          <div class="flex flex-wrap items-center gap-3 pt-1">
+            <div class="flex items-center gap-2">
+              <a href="{{ personal_info.github_url }}" target="_blank" class="w-9 h-9 rounded-full border border-white/10 bg-[#0b0f19] text-slate-300 hover:text-white hover:border-cyan-400 flex items-center justify-center transition-all">
+                <i class="fa-brands fa-github text-sm"></i>
+              </a>
+              <a href="{{ personal_info.linkedin_url }}" target="_blank" class="w-9 h-9 rounded-full border border-white/10 bg-[#0b0f19] text-slate-300 hover:text-white hover:border-cyan-400 flex items-center justify-center transition-all">
+                <i class="fa-brands fa-linkedin-in text-sm"></i>
+              </a>
+              <a href="mailto:{{ personal_info.email }}" class="w-9 h-9 rounded-full border border-white/10 bg-[#0b0f19] text-slate-300 hover:text-white hover:border-cyan-400 flex items-center justify-center transition-all">
+                <i class="fa-solid fa-envelope text-sm"></i>
+              </a>
+            </div>
+
+            <div class="h-4 w-px bg-white/15 hidden sm:block"></div>
+            <span class="text-xs font-mono tracking-tight uppercase text-slate-400">
+              LOC: {{ personal_info.location }} / OPEN TO RELOCATE
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Interactive 3D Perspective Terminal -->
+        <div class="lg:col-span-5 flex flex-col items-center w-full perspective-container">
+          <div id="interactive-tilt-card" class="w-full flex flex-col items-center preserve-3d transition-transform duration-200 ease-out">
+            
+            <!-- Terminal Header -->
+            <div class="w-full rounded-2xl border border-cyan-500/40 bg-[#070b14]/98 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9),0_0_35px_rgba(0,240,255,0.2)] overflow-hidden">
+              <div class="flex items-center justify-between px-4 py-3 border-b border-white/[0.08] bg-[#06080d] text-xs font-mono">
+                <div class="flex items-center gap-2">
+                  <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                  <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                  <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                </div>
+                <div class="text-[11px] font-semibold text-slate-400">
+                  mayuri@developer:~ (zsh)
+                </div>
+                <div class="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-950/80 border border-emerald-500/50 text-emerald-400">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span>ACTIVE</span>
+                </div>
+              </div>
+
+              <!-- Terminal Lines -->
+              <div class="p-4 sm:p-5 font-mono text-xs space-y-3.5">
+                <div>
+                  <div class="text-slate-500 flex items-center gap-1.5">
+                    <span class="text-cyan-400 font-bold">&gt;</span>
+                    <span>whoami</span>
+                  </div>
+                  <div class="pl-4 font-bold mt-0.5 text-sm text-cyan-300">
+                    {{ personal_info.name }}
+                  </div>
+                </div>
+
+                <div>
+                  <div class="text-slate-500 flex items-center gap-1.5">
+                    <span class="text-cyan-400 font-bold">&gt;</span>
+                    <span>degree</span>
+                  </div>
+                  <div class="pl-4 font-semibold mt-0.5 text-slate-200">
+                    B.Tech in Computer Science &amp; Engineering (CGPA: 8.33/10)
+                  </div>
+                </div>
+
+                <div>
+                  <div class="text-slate-500 flex items-center gap-1.5">
+                    <span class="text-cyan-400 font-bold">&gt;</span>
+                    <span>core_stack</span>
+                  </div>
+                  <div class="pl-4 font-medium mt-0.5 text-indigo-400">
+                    Python | Django | SQL | AWS (EC2, S3) | API Integration
+                  </div>
+                </div>
+
+                <div>
+                  <div class="text-slate-500 flex items-center gap-1.5">
+                    <span class="text-cyan-400 font-bold">&gt;</span>
+                    <span>major_project</span>
+                  </div>
+                  <div class="pl-4 font-semibold mt-0.5 text-emerald-400">
+                    &quot;Code Crew — LeetCode-inspired coding platform with React &amp; Node&quot;
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hero Stats Cards -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 w-full mt-3.5">
+              {% for stat in stats %}
+              <div class="p-3 rounded-xl border border-cyan-500/30 bg-[#080c14]/95 shadow-md flex flex-col justify-between">
+                <div class="text-xl sm:text-2xl font-black font-mono leading-none mb-1.5 text-cyan-400">
+                  {{ stat.value }}
+                </div>
+                <div class="text-[10px] sm:text-[11px] font-mono leading-snug text-slate-400">
+                  {{ stat.label }}
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-20 sm:py-28 relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex items-center gap-2 text-xs font-mono mb-3 tracking-wider text-cyan-400">
+        <span>// 01 //</span>
+        <span class="uppercase font-bold">ABOUT &amp; TECHNICAL FOCUS</span>
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-12 max-w-3xl leading-tight text-white">
+        Building Efficient Software &amp; Cloud-Based Solutions
+      </h2>
+
+      <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-12 items-start">
+        <div class="xl:col-span-7 flex flex-col space-y-6">
+          <p class="text-base sm:text-lg leading-relaxed text-slate-300">
+            {{ personal_info.bio }}
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+            <div class="p-4 rounded-2xl border border-white/10 bg-[#0b0f19]/90 hover:border-cyan-500/50 transition-all">
+              <i class="fa-solid fa-terminal text-cyan-400 text-xl mb-3"></i>
+              <h3 class="text-sm font-bold mb-2 text-white">Python &amp; Web Apps</h3>
+              <p class="text-xs text-slate-400">Developing web solutions with Python, Django, React.js &amp; REST APIs.</p>
+            </div>
+            <div class="p-4 rounded-2xl border border-white/10 bg-[#0b0f19]/90 hover:border-cyan-500/50 transition-all">
+              <i class="fa-solid fa-database text-indigo-400 text-xl mb-3"></i>
+              <h3 class="text-sm font-bold mb-2 text-white">SQL &amp; Database Design</h3>
+              <p class="text-xs text-slate-400">Relational schema design in MySQL, Amazon RDS &amp; query tuning.</p>
+            </div>
+            <div class="p-4 rounded-2xl border border-white/10 bg-[#0b0f19]/90 hover:border-cyan-500/50 transition-all">
+              <i class="fa-solid fa-cloud text-sky-400 text-xl mb-3"></i>
+              <h3 class="text-sm font-bold mb-2 text-white">AWS &amp; Cloud Services</h3>
+              <p class="text-xs text-slate-400">Media storage on Amazon S3, EC2 instances &amp; Amazon Connect.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="xl:col-span-5 w-full">
+          <div class="w-full rounded-2xl border border-cyan-500/30 bg-[#080c14]/98 p-5 space-y-3 font-mono text-xs text-slate-300">
+            <div class="text-xs font-bold text-cyan-400 mb-3 border-b border-white/10 pb-2">
+              &gt;_ Architecture System Execution
+            </div>
+            <div class="p-2.5 rounded border border-white/10 bg-[#0c1220] flex items-center justify-between">
+              <span>1. Frontend UI / React.js</span>
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-300">FRONTEND</span>
+            </div>
+            <div class="p-2.5 rounded border border-white/10 bg-[#0c1220] flex items-center justify-between">
+              <span>2. Django REST API Gateway</span>
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-sky-950 text-sky-300">BACKEND</span>
+            </div>
+            <div class="p-2.5 rounded border border-white/10 bg-[#0c1220] flex items-center justify-between">
+              <span>3. Voice NLP &amp; Speech API</span>
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-indigo-950 text-indigo-300">VOICE AI</span>
+            </div>
+            <div class="p-2.5 rounded border border-white/10 bg-[#0c1220] flex items-center justify-between">
+              <span>4. MySQL &amp; Amazon RDS</span>
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-purple-950 text-purple-300">DATABASE</span>
+            </div>
+            <div class="p-2.5 rounded border border-white/10 bg-[#0c1220] flex items-center justify-between">
+              <span>5. AWS S3 Media Bucket</span>
+              <span class="text-[9px] px-1.5 py-0.5 rounded bg-emerald-950 text-emerald-300">CLOUD S3</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & CERTIFICATIONS SECTION -->
+  <section id="experience" class="py-20 sm:py-28 relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-2 text-xs font-mono mb-2 tracking-wider text-cyan-400">
+        <span>// 02 //</span>
+        <span class="uppercase font-bold">EXPERIENCE &amp; CERTIFICATIONS</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-12 text-white">
+        Simulations &amp; Certifications
+      </h2>
+
+      <div class="space-y-6">
+        {% for exp in experiences %}
+        <div class="p-6 sm:p-8 rounded-2xl border border-cyan-500/25 bg-[#080c14]/95 shadow-md">
+          <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-4">
+            <div>
+              <span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold uppercase bg-cyan-950/70 border border-cyan-500/40 text-cyan-300">
+                {{ exp.exp_type }}
+              </span>
+              <h3 class="text-xl sm:text-2xl font-bold text-white mt-2">
+                {{ exp.role }}
+              </h3>
+              <p class="text-sm font-medium text-cyan-400">
+                <i class="fa-solid fa-award mr-1"></i> {{ exp.company }} • {{ exp.period }}
+              </p>
+            </div>
+            <span class="px-3 py-1 rounded-md text-xs font-mono font-bold uppercase border border-cyan-500/40 text-cyan-400 bg-cyan-500/10">
+              VERIFIED
+            </span>
+          </div>
+
+          <ul class="space-y-2 mb-6 font-mono text-xs text-slate-300">
+            {% for desc in exp.get_description_list %}
+            <li class="flex items-start gap-2.5">
+              <i class="fa-solid fa-circle-check text-cyan-400 mt-0.5"></i>
+              <span>{{ desc }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+
+          <div class="pt-4 border-t border-white/10 flex flex-wrap gap-2">
+            {% for skill in exp.get_skill_list %}
+            <span class="px-3 py-1 rounded-lg border border-white/10 bg-[#0d121f] text-xs font-mono text-slate-300">
+              {{ skill }}
+            </span>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Certifications Grid -->
+      <div class="mt-16">
+        <h3 class="text-xl font-bold mb-6 flex items-center gap-2 text-white">
+          <i class="fa-solid fa-shield-halved text-cyan-400"></i>
+          <span>Certifications &amp; Training Badges</span>
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {% for cert in certifications %}
+          <div class="p-5 rounded-xl border border-white/10 bg-[#080c14]/90 hover:border-cyan-500/30 transition-all">
+            <span class="text-[10px] font-mono uppercase font-bold text-cyan-400 px-2 py-0.5 rounded bg-cyan-950/60 border border-cyan-500/30">
+              {{ cert.issuer }}
+            </span>
+            <h4 class="text-sm font-bold mb-2 mt-3 text-white">{{ cert.title }}</h4>
+            <p class="text-xs text-slate-400 leading-relaxed">{{ cert.description }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="py-20 sm:py-28 relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-2 text-xs font-mono mb-2 tracking-wider text-cyan-400">
+        <span>// 03 //</span>
+        <span class="uppercase font-bold">PORTFOLIO PROJECTS</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-12 text-white">
+        Featured Academic Projects
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {% for project in projects %}
+        <div class="p-6 rounded-2xl border border-cyan-500/20 bg-[#080c14]/95 shadow-xl flex flex-col justify-between hover:border-cyan-400/50 transition-all">
+          <div>
+            <span class="text-[10px] font-mono uppercase font-bold px-2.5 py-1 rounded bg-cyan-950 text-cyan-300 border border-cyan-500/30">
+              {{ project.project_type }}
+            </span>
+            <h3 class="text-2xl font-bold text-white mt-3 mb-1">{{ project.title }}</h3>
+            <p class="text-xs font-semibold text-cyan-400 mb-4">{{ project.subtitle }}</p>
+            <p class="text-xs text-slate-300 leading-relaxed mb-5">{{ project.description }}</p>
+
+            <div class="space-y-1.5 font-mono text-xs text-slate-300 mb-6">
+              {% for feature in project.get_feature_list %}
+              <div class="flex items-start gap-2">
+                <span class="text-cyan-400">•</span>
+                <span>{{ feature }}</span>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 flex flex-wrap gap-1.5">
+            {% for tech in project.get_tech_list %}
+            <span class="px-2.5 py-1 rounded border border-white/10 bg-[#0d121f] text-[11px] font-mono text-slate-300">
+              {{ tech }}
+            </span>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="py-20 sm:py-28 relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-2 text-xs font-mono mb-2 tracking-wider text-cyan-400">
+        <span>// 04 //</span>
+        <span class="uppercase font-bold">TECHNICAL SKILLS</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-8 text-white">
+        Skills &amp; Technologies
+      </h2>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap gap-2 mb-8 font-mono text-xs">
+        <button type="button" data-category="all" class="skill-tab-btn px-4 py-2 rounded-full bg-cyan-500 text-slate-950 font-bold transition-all">All Skills</button>
+        {% for category in skill_categories %}
+        <button type="button" data-category="{{ category.title|slugify }}" class="skill-tab-btn px-4 py-2 rounded-full bg-slate-800/80 text-slate-300 hover:text-white transition-all">{{ category.title }}</button>
+        {% endfor %}
+      </div>
+
+      <!-- Skills Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {% for category in skill_categories %}
+        <div data-category="{{ category.title|slugify }}" class="skill-category-block p-6 rounded-2xl border border-white/10 bg-[#080c14]/90">
+          <h3 class="text-base font-bold text-white mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-code text-cyan-400 text-sm"></i>
+            <span>{{ category.title }}</span>
+          </h3>
+          <div class="flex flex-wrap gap-2 font-mono text-xs">
+            {% for skill in category.skills.all %}
+            <span class="px-3 py-1.5 rounded-lg border {% if skill.highlight %}border-cyan-500/50 bg-cyan-950/60 text-cyan-300{% else %}border-white/10 bg-[#0d121f] text-slate-300{% endif %}">
+              {{ skill.name }}
+            </span>
+            {% empty %}
+            {% for s in category.skills %}
+            <span class="px-3 py-1.5 rounded-lg border {% if s.highlight %}border-cyan-500/50 bg-cyan-950/60 text-cyan-300{% else %}border-white/10 bg-[#0d121f] text-slate-300{% endif %}">
+              {{ s.name }}
+            </span>
+            {% endfor %}
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education" class="py-20 sm:py-28 relative z-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-2 text-xs font-mono mb-2 tracking-wider text-cyan-400">
+        <span>// 05 //</span>
+        <span class="uppercase font-bold">EDUCATION &amp; FOUNDATION</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Left: Education Cards -->
+        <div class="lg:col-span-6 space-y-6">
+          {% for edu in education_list %}
+          <div class="p-6 rounded-2xl border border-cyan-500/20 bg-[#080c14]/95 shadow-md">
+            <div class="flex items-start justify-between gap-3 mb-3">
+              <i class="fa-solid fa-graduation-cap text-cyan-400 text-2xl"></i>
+              <span class="px-2.5 py-1 rounded text-xs font-mono font-bold bg-cyan-950 border border-cyan-500/40 text-cyan-300">
+                {{ edu.score }}
+              </span>
+            </div>
+            <div class="text-xs font-mono text-cyan-400 mb-1">{{ edu.period }} • {{ edu.field }}</div>
+            <h3 class="text-lg font-bold text-white mb-1">{{ edu.degree }}</h3>
+            <p class="text-sm font-semibold text-slate-300 mb-3">{{ edu.institution }}</p>
+
+            <ul class="space-y-1.5 text-xs text-slate-400 mb-4">
+              {% for highlight in edu.get_highlight_list %}
+              <li class="flex items-start gap-1.5">
+                <span class="text-cyan-400">•</span>
+                <span>{{ highlight }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+            <div class="text-xs font-mono text-slate-400 border-t border-white/10 pt-3">
+              <i class="fa-solid fa-location-dot text-cyan-400 mr-1"></i> {{ edu.location }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- Right: Engineering Philosophy -->
+        <div class="lg:col-span-6 flex flex-col">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">Engineering Philosophy</h2>
+          <p class="text-sm text-slate-400 mb-6">Guiding principles for building clean, efficient, and reliable software applications.</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-5 rounded-xl border border-white/10 bg-[#080c14]/90">
+              <i class="fa-solid fa-layer-group text-cyan-400 text-lg mb-2"></i>
+              <h3 class="text-sm font-bold text-white mb-1">Clean &amp; Efficient Code</h3>
+              <p class="text-xs text-slate-400">Maintainable Python &amp; JavaScript code with clear modular design.</p>
+            </div>
+            <div class="p-5 rounded-xl border border-white/10 bg-[#080c14]/90">
+              <i class="fa-solid fa-network-wired text-sky-400 text-lg mb-2"></i>
+              <h3 class="text-sm font-bold text-white mb-1">Cloud &amp; API Integration</h3>
+              <p class="text-xs text-slate-400">AWS cloud services (EC2, S3, RDS) and RESTful API integration.</p>
+            </div>
+            <div class="p-5 rounded-xl border border-white/10 bg-[#080c14]/90">
+              <i class="fa-solid fa-shield-halved text-indigo-400 text-lg mb-2"></i>
+              <h3 class="text-sm font-bold text-white mb-1">User-Centric Interfaces</h3>
+              <p class="text-xs text-slate-400">Intuitive, mobile-responsive web interfaces with React &amp; Tailwind CSS.</p>
+            </div>
+            <div class="p-5 rounded-xl border border-white/10 bg-[#080c14]/90">
+              <i class="fa-solid fa-microchip text-purple-400 text-lg mb-2"></i>
+              <h3 class="text-sm font-bold text-white mb-1">Continuous Learning</h3>
+              <p class="text-xs text-slate-400">Driven by curiosity to explore emerging frameworks &amp; SDLC practices.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-24 sm:py-32 relative z-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 text-xs font-mono mb-3 tracking-wider text-cyan-400">
+        <span>// 06 //</span>
+        <span class="uppercase font-bold">GET IN TOUCH</span>
+      </div>
+
+      <h2 class="text-4xl sm:text-5xl font-black tracking-tight mb-5 text-white">
+        Let's Build Something Great.
+      </h2>
+      <p class="text-base sm:text-lg max-w-2xl mx-auto mb-10 text-slate-300 leading-relaxed">
+        Have an innovative product, cloud development requirement, or software role? Let's connect and discuss building efficient solutions.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-8">
+        <a href="mailto:{{ personal_info.email }}" class="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold text-xs sm:text-sm text-slate-950 bg-gradient-to-r from-cyan-400 to-sky-400 hover:from-cyan-300 hover:to-sky-300 shadow-[0_0_30px_rgba(34,211,238,0.4)] transition-all">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Email Me Directly</span>
+        </a>
+
+        <a href="{{ personal_info.linkedin_url }}" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-xs sm:text-sm border border-white/15 bg-[#080c14] text-slate-200 hover:border-cyan-400 transition-all">
+          <i class="fa-brands fa-linkedin"></i>
+          <span>LinkedIn Profile</span>
+        </a>
+      </div>
+
+      <div class="inline-flex items-center gap-2 text-xs font-mono text-slate-400">
+        <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        <span>Based in {{ personal_info.location }} • Open to Remote Worldwide / Relocation Roles</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="py-12 border-t border-white/10 relative z-20 bg-[#04060a]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div>
+      <div class="text-base font-extrabold text-white mb-1">{{ personal_info.name }}</div>
+      <div class="text-xs font-mono text-slate-400">{{ personal_info.role }}</div>
+    </div>
+    <div class="text-xs font-mono text-slate-500 text-center sm:text-right">
+      © {% now "Y" %} {{ personal_info.name }}. Built with Python, Django, JavaScript &amp; CSS.
+    </div>
+  </div>
+</footer>
+{% endblock %}
