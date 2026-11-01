@@ -16,7 +16,7 @@ def portfolio_index(request):
         personal_info = PersonalInfo(
             name='Mayuri Chourase',
             role='Computer Science Graduate & Software Developer',
-            specialization='Python • Full Stack Development • AWS & Cloud • SQL',
+            specialization='Python • AWS & Cloud • SQL',
             tagline='Results-oriented Computer Science graduate with hands-on experience in Python, SQL, AWS, and cloud technologies.',
             bio='Results-oriented Computer Science graduate with hands-on experience in Python, SQL, AWS, and cloud technologies. Skilled in developing applications, integrating APIs, and implementing cloud-based solutions. Strong analytical thinker with a passion for continuous learning and delivering efficient software solutions.',
             email='Mayurichourase2050@gmail.com',
