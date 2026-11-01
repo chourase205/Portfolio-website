@@ -31,7 +31,7 @@ def portfolio_index(request):
     stats = [
         {'value': '8.33', 'label': 'B.Tech CGPA (BU)', 'description': 'UIT Barkatullah University, Bhopal'},
         {'value': '3+', 'label': 'Core Projects', 'description': 'Voice AI, Quiz Platform & Coding Workspace'},
-        {'value': '10+', 'label': 'Technologies', 'description': 'Python, Django, AWS, SQL, React & Tailwind'},
+        {'value': '10+', 'label': 'Technologies', 'description': 'Python, Django, AWS, SQL & Cloud Services'},
         {'value': '4', 'label': 'Certifications', 'description': 'Python, AWS, Front-End & HackerRank SQL'},
     ]
 
