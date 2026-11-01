@@ -21,7 +21,7 @@ Certification.objects.all().delete()
 PersonalInfo.objects.create(
     name='Mayuri Chourase',
     role='Computer Science Graduate & Software Developer',
-    specialization='Python • Full Stack Development • AWS & Cloud • SQL',
+    specialization='Python • AWS & Cloud • SQL',
     tagline='Results-oriented Computer Science graduate with hands-on experience in Python, SQL, AWS, and cloud technologies.',
     bio='Results-oriented Computer Science graduate with hands-on experience in Python, SQL, AWS, and cloud technologies. Skilled in developing applications, integrating APIs, and implementing cloud-based solutions. Strong analytical thinker with a passion for continuous learning and delivering efficient software solutions.',
     email='Mayurichourase2050@gmail.com',
@@ -35,7 +35,7 @@ PersonalInfo.objects.create(
 # Stat Items
 StatItem.objects.create(value='8.33', suffix=' / 10', label='B.Tech CGPA', description='Computer Science & Engineering', order=1)
 StatItem.objects.create(value='3', suffix='+', label='Academic Projects', description='Python voice AI, Cloud & Web platforms', order=2)
-StatItem.objects.create(value='10+', suffix='+', label='Tech & Tools', description='Python, Django, AWS, SQL, React, Tailwind', order=3)
+StatItem.objects.create(value='10+', suffix='+', label='Tech & Tools', description='Python, Django, AWS, SQL & Cloud Services', order=3)
 StatItem.objects.create(value='4', suffix='', label='Certifications & Awards', description='Python, AWS, Frontend & HackerRank SQL', order=4)
 
 # Projects (According to Resume)
