@@ -220,6 +220,58 @@ def portfolio_index(request):
         }
     ]
 
+    # Certifications & Credentials
+    certifications = [
+        {
+            'id': 'python-cert',
+            'title': 'Python Software Development Certification',
+            'issuer': 'Professional Certification',
+            'period': '2024',
+            'badge': 'VERIFIED CREDENTIAL',
+            'icon': 'terminal',
+            'accent': 'cyan',
+            'description': 'Demonstrated advanced proficiency in Python programming, data handling, object-oriented architecture, and REST API integration.',
+            'skills': ['Python', 'OOP', 'Data Handling', 'API Integration', 'Testing & Debugging'],
+            'credential_url': 'https://github.com'
+        },
+        {
+            'id': 'aws-simulation-cert',
+            'title': 'AWS Solutions Architecture Job Simulation',
+            'issuer': 'Amazon Web Services (Forage)',
+            'period': '2024 — 2025',
+            'badge': 'CLOUD CREDENTIAL',
+            'icon': 'cloud',
+            'accent': 'amber',
+            'description': 'Designed resilient, fault-tolerant cloud architectures using AWS EC2, Amazon S3, and RDS for high-availability production workloads.',
+            'skills': ['AWS Cloud', 'Amazon EC2', 'Amazon S3', 'Amazon RDS', 'Cloud Security'],
+            'credential_url': 'https://github.com'
+        },
+        {
+            'id': 'frontend-simulation-cert',
+            'title': 'Front-End Software Engineering Simulation',
+            'issuer': 'Forage',
+            'period': '2024',
+            'badge': 'ENGINEERING SIMULATION',
+            'icon': 'layout',
+            'accent': 'sky',
+            'description': 'Constructed performant, responsive web applications following modern component-driven engineering principles and UI/UX design patterns.',
+            'skills': ['React.js', 'JavaScript (ES6+)', 'Tailwind CSS', 'UI/UX Design', 'Responsive Web'],
+            'credential_url': 'https://github.com'
+        },
+        {
+            'id': 'hackerrank-sql-cert',
+            'title': 'HackerRank SQL (Intermediate) Certified',
+            'issuer': 'HackerRank',
+            'period': '2024',
+            'badge': 'ASSESSMENT CERTIFIED',
+            'icon': 'database',
+            'accent': 'emerald',
+            'description': 'Earned intermediate-level certification through solving complex relational database queries, table joins, aggregations, and subqueries.',
+            'skills': ['SQL', 'MySQL', 'Relational Schema', 'Query Optimization', 'Subqueries & Joins'],
+            'credential_url': 'https://github.com'
+        }
+    ]
+
     context = {
         'personal_info': personal_info,
         'stats': stats,
@@ -230,6 +282,7 @@ def portfolio_index(request):
         'skill_columns': skill_columns,
         'education_info': education_info,
         'philosophies': philosophies,
+        'certifications': certifications,
     }
 
     return render(request, 'index.html', context)

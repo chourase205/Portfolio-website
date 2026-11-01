@@ -113,7 +113,7 @@ function initPortfolio() {
   });
 
   // --- Scroll Spy for Active Navigation Link ---
-  const sections = ['hero', 'about', 'experience', 'projects', 'skills', 'education', 'contact'];
+  const sections = ['hero', 'about', 'experience', 'projects', 'skills', 'education', 'certifications', 'contact'];
   const navLinks = document.querySelectorAll('.desktop-nav-link');
 
   const updateActiveNavLink = () => {
