@@ -1,32 +1,83 @@
-# React + TypeScript + Vite
+# Mayuri Chourase — Developer Portfolio (Python & Django)
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Personal software engineering portfolio of **Mayuri Chourase** (Computer Science Graduate & Software Developer specializing in Python, Full Stack Web Development, AWS, and SQL).
 
-Currently, two official plugins are available:
+Converted to a pure **Python & Django** web application with identical cybernetic UI design, glassmorphic styling, responsive layout, animations, and interactive features.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ⚡ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Backend**: Python 3, Django 5.x, SQLite / ORM Models
+- **Frontend / UI**: HTML5, Django Template Engine, Tailwind CSS, Vanilla JavaScript
+- **Icons & Effects**: Lucide Icons, Canvas Confetti, Custom WebGL/Canvas micro-bubbles particle animation
+- **Styling**: Cybernetic Glassmorphism, JetBrains Mono & Plus Jakarta Sans typography, Dark & Light Mode theme switching
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## 🚀 Getting Started
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+### 1. Install Dependencies
+```bash
+pip install -r requirements.txt
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### 2. Apply Migrations (Optional / Initial Setup)
+```bash
+python manage.py migrate
+```
+
+### 3. Seed Portfolio Database
+Populate database with Mayuri Chourase's exact projects, education, skills, and experience:
+```bash
+python seed_db.py
+```
+
+### 4. Run Development Server
+```bash
+python manage.py runserver
+```
+
+Open [http://127.0.0.1:8000](http://127.0.0.1:8000) in your web browser.
+
+---
+
+## 📂 Project Structure
+
+```
+├── manage.py              # Django management CLI
+├── requirements.txt       # Python dependencies
+├── seed_db.py             # Database seeder script
+├── db.sqlite3             # SQLite database
+├── portfolio_config/      # Django project settings & URLs
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── portfolio_app/         # Portfolio Django application
+│   ├── models.py          # Data models (PersonalInfo, Projects, etc.)
+│   ├── views.py           # Controller & template context
+│   ├── urls.py            # Route definitions
+│   └── admin.py           # Django admin integration
+├── templates/             # HTML Templates
+│   ├── base.html          # Base layout, meta tags, background & scripts
+│   └── index.html         # Complete single-page portfolio layout
+└── static/                # Static assets (CSS, JS, Fonts, Images)
+    ├── css/
+    │   ├── tailwind.css   # Full compiled Tailwind stylesheet
+    │   └── style.css      # Custom animations, orbs & theme styles
+    ├── js/
+    │   └── main.js        # Cursor, confetti, theme & particle logic
+    └── img/
+        └── hero.png
+```
+
+---
+
+## 🎯 Features
+
+- **Pixel-Perfect UI Fidelity**: Retains 100% of the original cybernetic dark UI, neon accents, and responsive layout.
+- **Dynamic Content from Python / Django**: All data is driven by Django models and views.
+- **Interactive Cybernetic Cursor**: Custom trailing outer ring and inner dot with spring physics and interactive element detection.
+- **Buoyant Particle Background**: Canvas-based micro-bubble floating physics.
+- **Theme Switcher**: Seamless Dark / Light mode toggle with state persistence in `localStorage`.
+- **Interactive Terminal & Diagnostics Mock**: Architecture execution flow and EchoSphere speech assistant diagnostics.

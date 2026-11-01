@@ -4,13 +4,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ personal_info.name }} — {{ personal_info.role }}</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
   
-  <!-- Meta Tags -->
-  <meta name="description" content="Portfolio of Mayuri Chourase, a Computer Science Graduate specializing in Python, SQL, AWS, Django, React.js, and Cloud technologies." />
-  <meta name="keywords" content="Mayuri Chourase, Software Developer, Computer Science, Python, Django, React.js, AWS, SQL, Code Crew, EchoSphere, IntelliQuest" />
+  <!-- Primary Meta Tags -->
+  <title>{{ personal_info.name }} — {{ personal_info.role }}</title>
+  <meta name="title" content="{{ personal_info.name }} — {{ personal_info.role }}" />
+  <meta name="description" content="Portfolio of Mayuri Chourase, a Computer Science Graduate & Software Developer specializing in Python, Full Stack Web, AWS, and SQL." />
+  <meta name="keywords" content="Mayuri Chourase, Software Developer, Python Developer, Django, AWS, SQL, React, EchoSphere" />
   <meta name="author" content="{{ personal_info.name }}" />
   <meta name="theme-color" content="#06080d" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Immediate Theme Initializer -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('portfolio-theme') || 'dark';
+      if (saved === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.classList.remove('light');
+        document.documentElement.classList.add('dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -28,26 +51,31 @@
     };
   </script>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Custom CSS for Theme Contrasts & Cybernetic Effects -->
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Three.js 3D WebGL Library for White Constellation Dots -->
+  <script src="{% static 'js/three.min.js' %}"></script>
+  <script>
+    if (typeof THREE === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');
+    }
+  </script>
 
-  <!-- Three.js 3D Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Lucide Icons Vanilla Library -->
+  <script src="{% static 'js/lucide.min.js' %}"></script>
+  <script>
+    if (typeof lucide === 'undefined') {
+      document.write('<script src="https://unpkg.com/lucide@latest"><\/script>');
+    }
+  </script>
 
   <!-- Canvas Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
-<body class="relative min-h-screen bg-[#06080d] text-slate-100 antialiased selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden">
+<body class="relative min-h-screen transition-colors duration-300 selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden font-sans">
 
-  <!-- 3D WebGL Background Canvas Container -->
+  <!-- 3D WebGL Background Canvas Container (Interactive White & Cyan Dots) -->
   <div id="three-bg-canvas" class="fixed inset-0 pointer-events-none z-0"></div>
 
   {% block content %}

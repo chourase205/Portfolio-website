@@ -1,123 +1,156 @@
-// Main JavaScript for Portfolio Web Application
-document.addEventListener('DOMContentLoaded', () => {
-  // Theme Toggle (Dark / Light Mode)
-  const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+// Main Interactive JavaScript for Mayuri Chourase Portfolio
+
+function initPortfolio() {
+  // Initialize Lucide Icons if available
+  if (typeof lucide !== 'undefined' && lucide.createIcons) {
+    try {
+      lucide.createIcons();
+    } catch (e) {
+      console.warn('Lucide icon initialization note:', e);
+    }
+  }
+
+  // --- Theme Management (Dark / Light Mode) ---
   const htmlEl = document.documentElement;
 
-  // Saved theme or default to dark
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  if (savedTheme === 'light') {
-    htmlEl.classList.remove('dark');
-    htmlEl.classList.add('light');
-  } else {
-    htmlEl.classList.add('dark');
-    htmlEl.classList.remove('light');
+  function applyTheme(theme) {
+    const sunIcons = document.querySelectorAll('.theme-icon-sun');
+    const moonIcons = document.querySelectorAll('.theme-icon-moon');
+    const toggleBtns = document.querySelectorAll('.theme-toggle-btn');
+
+    if (theme === 'light') {
+      htmlEl.classList.remove('dark');
+      htmlEl.classList.add('light');
+      htmlEl.setAttribute('data-theme', 'light');
+      localStorage.setItem('portfolio-theme', 'light');
+      localStorage.setItem('theme', 'light');
+
+      // In Light Mode: Show Moon icon (click to switch to Dark Mode)
+      sunIcons.forEach(el => el.classList.add('hidden'));
+      moonIcons.forEach(el => el.classList.remove('hidden'));
+      toggleBtns.forEach(btn => btn.setAttribute('title', 'Switch to Dark Mode'));
+    } else {
+      htmlEl.classList.remove('light');
+      htmlEl.classList.add('dark');
+      htmlEl.setAttribute('data-theme', 'dark');
+      localStorage.setItem('portfolio-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+
+      // In Dark Mode: Show Sun icon (click to switch to Light Mode)
+      sunIcons.forEach(el => el.classList.remove('hidden'));
+      moonIcons.forEach(el => el.classList.add('hidden'));
+      toggleBtns.forEach(btn => btn.setAttribute('title', 'Switch to Light Mode'));
+    }
+
+    // Notify listeners (e.g. Three.js canvas particles)
+    window.dispatchEvent(new CustomEvent('portfolioThemeChange', { detail: { theme } }));
   }
 
-  themeToggleBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (htmlEl.classList.contains('dark')) {
-        htmlEl.classList.remove('dark');
-        htmlEl.classList.add('light');
-        localStorage.setItem('theme', 'light');
-      } else {
-        htmlEl.classList.remove('light');
-        htmlEl.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-      }
+  // Read saved theme, default to dark
+  const savedTheme = localStorage.getItem('portfolio-theme') || localStorage.getItem('theme') || 'dark';
+  applyTheme(savedTheme);
+
+  // Attach click listener to all theme toggle buttons
+  document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isCurrentlyDark = htmlEl.classList.contains('dark');
+      applyTheme(isCurrentlyDark ? 'light' : 'dark');
     });
   });
 
-  // Mobile Drawer Menu
+  // --- Navbar Scroll Styling ---
+  const navbar = document.getElementById('navbar');
+  const handleScroll = () => {
+    if (!navbar) return;
+    if (window.scrollY > 20) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+
+  // --- Mobile Drawer Menu ---
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
   const mobileDrawer = document.getElementById('mobile-drawer');
+  const mobileDrawerBackdrop = document.getElementById('mobile-drawer-backdrop');
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-  if (mobileMenuBtn && mobileDrawer) {
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileDrawer.classList.toggle('hidden');
-    });
+  const openMobileMenu = () => {
+    if (mobileDrawer) mobileDrawer.classList.remove('hidden');
+    if (mobileDrawerBackdrop) mobileDrawerBackdrop.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  };
 
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileDrawer.classList.add('hidden');
-      });
-    });
-  }
+  const closeMobileMenu = () => {
+    if (mobileDrawer) mobileDrawer.classList.add('hidden');
+    if (mobileDrawerBackdrop) mobileDrawerBackdrop.classList.add('hidden');
+    document.body.style.overflow = '';
+  };
 
-  // Resume Download Confetti Effect
-  const resumeBtn = document.getElementById('resume-download-btn');
-  if (resumeBtn && typeof confetti === 'function') {
-    resumeBtn.addEventListener('click', (e) => {
+  if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+  if (mobileMenuCloseBtn) mobileMenuCloseBtn.addEventListener('click', closeMobileMenu);
+  if (mobileDrawerBackdrop) mobileDrawerBackdrop.addEventListener('click', closeMobileMenu);
+  mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+  // --- Resume Download Confetti Trigger ---
+  document.querySelectorAll('.resume-download-trigger').forEach(btn => {
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
-      confetti({
-        particleCount: 80,
-        spread: 70,
-        origin: { y: 0.7 },
-        colors: ['#00f0ff', '#38bdf8', '#818cf8', '#a855f7']
-      });
-      alert("Resume download initiated! Mayuri Chourase's resume details are loaded on this portfolio.");
-    });
-  }
-
-  // Interactive 3D Perspective Tilt on Mouse Movement
-  const tiltCard = document.getElementById('interactive-tilt-card');
-  if (tiltCard) {
-    tiltCard.addEventListener('mousemove', (e) => {
-      const rect = tiltCard.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      tiltCard.style.transform = `rotateX(${-y * 12}deg) rotateY(${x * 14}deg)`;
-    });
-
-    tiltCard.addEventListener('mouseleave', () => {
-      tiltCard.style.transform = 'rotateX(0deg) rotateY(0deg)';
-    });
-  }
-
-  // Skill Filter Category Tabs
-  const skillCategoryBtns = document.querySelectorAll('.skill-tab-btn');
-  const skillBlocks = document.querySelectorAll('.skill-category-block');
-
-  skillCategoryBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetCat = btn.getAttribute('data-category');
-
-      skillCategoryBtns.forEach(b => {
-        b.classList.remove('bg-cyan-500', 'text-slate-950', 'font-bold');
-        b.classList.add('bg-slate-800/80', 'text-slate-300');
-      });
-      btn.classList.remove('bg-slate-800/80', 'text-slate-300');
-      btn.classList.add('bg-cyan-500', 'text-slate-950', 'font-bold');
-
-      skillBlocks.forEach(block => {
-        if (targetCat === 'all' || block.getAttribute('data-category') === targetCat) {
-          block.style.display = 'block';
-        } else {
-          block.style.display = 'none';
-        }
-      });
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 80,
+          spread: 70,
+          origin: { y: 0.75 },
+          colors: ['#00f0ff', '#38bdf8', '#818cf8', '#a855f7']
+        });
+      }
+      alert("Resume download initiated! (Connect your PDF URL in the Django admin or views.py)");
     });
   });
 
-  // Intersection Observer for Active Nav Link
-  const sections = document.querySelectorAll('section[id]');
+  // --- Scroll Spy for Active Navigation Link ---
+  const sections = ['hero', 'about', 'experience', 'projects', 'skills', 'education', 'certifications', 'contact'];
   const navLinks = document.querySelectorAll('.desktop-nav-link');
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(sec => {
-      const sectionTop = sec.offsetTop - 120;
-      if (window.scrollY >= sectionTop) {
-        current = sec.getAttribute('id');
+  const updateActiveNavLink = () => {
+    let currentSection = '';
+    const scrollPosition = window.scrollY + 200;
+
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        const top = el.offsetTop;
+        const height = el.offsetHeight;
+        if (scrollPosition >= top && scrollPosition < top + height) {
+          currentSection = id;
+        }
       }
     });
 
     navLinks.forEach(link => {
-      link.classList.remove('text-cyan-400', 'font-bold');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('text-cyan-400', 'font-bold');
+      const href = link.getAttribute('href');
+      const indicator = link.querySelector('.nav-pill-indicator');
+      if (href === `#${currentSection}`) {
+        link.classList.add('active-link');
+        if (indicator) indicator.classList.remove('hidden');
+      } else {
+        link.classList.remove('active-link');
+        if (indicator) indicator.classList.add('hidden');
       }
     });
-  });
-});
+  };
+
+  window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+  updateActiveNavLink();
+}
+
+// Execute immediately if DOM is already ready, or wait for DOMContentLoaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPortfolio);
+} else {
+  initPortfolio();
+}
