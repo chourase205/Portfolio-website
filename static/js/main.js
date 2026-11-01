@@ -1,9 +1,13 @@
 // Main Interactive JavaScript for Mayuri Chourase Portfolio
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize Lucide Icons
+function initPortfolio() {
+  // Initialize Lucide Icons if available
   if (typeof lucide !== 'undefined' && lucide.createIcons) {
-    lucide.createIcons();
+    try {
+      lucide.createIcons();
+    } catch (e) {
+      console.warn('Lucide icon initialization note:', e);
+    }
   }
 
   // --- Theme Management (Dark / Light Mode) ---
@@ -142,4 +146,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', updateActiveNavLink, { passive: true });
   updateActiveNavLink();
-});
+}
+
+// Execute immediately if DOM is already ready, or wait for DOMContentLoaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPortfolio);
+} else {
+  initPortfolio();
+}
