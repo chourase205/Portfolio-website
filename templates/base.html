@@ -12,24 +12,14 @@
   <meta name="description" content="Portfolio of Mayuri Chourase, a Computer Science Graduate & Software Developer specializing in Python, Full Stack Web, AWS, and SQL." />
   <meta name="keywords" content="Mayuri Chourase, Software Developer, Python Developer, Django, AWS, SQL, React, EchoSphere" />
   <meta name="author" content="{{ personal_info.name }}" />
-  <meta name="theme-color" content="#010204" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="{{ personal_info.name }} — {{ personal_info.role }}" />
-  <meta property="og:description" content="Portfolio of Mayuri Chourase, a Computer Science Graduate & Software Developer specializing in Python, Full Stack Web, AWS, and SQL." />
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:title" content="{{ personal_info.name }} — {{ personal_info.role }}" />
-  <meta property="twitter:description" content="Portfolio of Mayuri Chourase, a Computer Science Graduate & Software Developer specializing in Python, Full Stack Web, AWS, and SQL." />
+  <meta name="theme-color" content="#06080d" />
 
   <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- Immediate Theme Initializer (Zero Flash) -->
+  <!-- Immediate Theme Initializer -->
   <script>
     (function() {
       const saved = localStorage.getItem('portfolio-theme') || 'dark';
@@ -45,52 +35,54 @@
     })();
   </script>
 
-  <!-- Compiled Tailwind CSS from Project -->
-  <link rel="stylesheet" href="{% static 'css/tailwind.css' %}" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
 
-  <!-- Custom CSS for Cybernetic Effects, Animations & Light Mode -->
+  <!-- Custom CSS for Theme Contrasts & Cybernetic Effects -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
+  <!-- Three.js 3D WebGL Library for White Constellation Dots -->
+  <script src="{% static 'js/three.min.js' %}"></script>
+  <script>
+    if (typeof THREE === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');
+    }
+  </script>
+
   <!-- Lucide Icons Vanilla Library -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="{% static 'js/lucide.min.js' %}"></script>
+  <script>
+    if (typeof lucide === 'undefined') {
+      document.write('<script src="https://unpkg.com/lucide@latest"><\/script>');
+    }
+  </script>
 
   <!-- Canvas Confetti -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 </head>
-<body class="relative min-h-screen transition-colors duration-500 selection:bg-cyan-500/30 selection:text-cyan-200 bg-[#06080d] text-slate-100 overflow-x-hidden font-sans">
+<body class="relative min-h-screen transition-colors duration-300 selection:bg-cyan-500/30 selection:text-cyan-200 overflow-x-hidden font-sans">
 
-  <!-- Interactive Cybernetic Custom Cursor -->
-  <div id="custom-cursor-container" class="fixed inset-0 pointer-events-none z-[9999] overflow-hidden hidden" aria-hidden="true">
-    <div id="custom-cursor-outer" class="fixed top-0 left-0 rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-[width,height,border-color,background-color] duration-150 ease-out" style="width: 34px; height: 34px; border: 1.5px solid rgba(56, 189, 248, 0.45); opacity: 0.65; box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);"></div>
-    <div id="custom-cursor-inner" class="fixed top-0 left-0 rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 transition-[width,height] duration-75 ease-out" style="width: 6px; height: 6px; background-color: #00f0ff; box-shadow: 0 0 8px #00f0ff, 0 0 14px rgba(0, 240, 255, 0.8);"></div>
-  </div>
-
-  <!-- Background Animated Layer (FloatingBackground) -->
-  <div id="floating-bg" class="fixed inset-0 pointer-events-none overflow-hidden z-0 transition-colors duration-500" aria-hidden="true">
-    <!-- Dark Mode Base -->
-    <div class="dark-bg-element absolute inset-0 bg-[#06080d]"></div>
-    <div class="dark-bg-element absolute inset-0 bg-gradient-to-b from-[#080c16] via-[#06080d] to-[#040609]"></div>
-    <div class="dark-bg-element absolute inset-0 bg-grid-pattern opacity-15 [mask-image:radial-gradient(ellipse_90%_70%_at_50%_30%,#000_50%,transparent_100%)]"></div>
-
-    <!-- Ambient Glow Orbs -->
-    <div class="dark-bg-element absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full bg-cyan-500/[0.07] blur-[150px] animate-orb-1"></div>
-    <div class="dark-bg-element absolute top-[35%] right-[10%] w-[550px] h-[550px] rounded-full bg-indigo-500/[0.06] blur-[150px] animate-orb-2"></div>
-    <div class="dark-bg-element absolute bottom-[20%] left-[25%] w-[700px] h-[500px] rounded-full bg-sky-500/[0.05] blur-[160px] animate-orb-3"></div>
-
-    <!-- Light Mode Base -->
-    <div class="light-bg-element hidden absolute inset-0 bg-[#f8fafc]"></div>
-    <div class="light-bg-element hidden absolute inset-0 bg-gradient-to-b from-sky-50 via-slate-50 to-indigo-50/40"></div>
-    <div class="light-bg-element hidden absolute inset-0 bg-grid-pattern opacity-10 [mask-image:radial-gradient(ellipse_90%_70%_at_50%_30%,#000_50%,transparent_100%)]"></div>
-    <div class="light-bg-element hidden absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-sky-200/30 blur-[130px] animate-orb-1"></div>
-  </div>
-
-  <!-- Buoyant Micro-Bubbles Canvas Layer (ParticleBackground) -->
-  <canvas id="particle-canvas" class="fixed inset-0 pointer-events-none z-0" aria-hidden="true"></canvas>
+  <!-- 3D WebGL Background Canvas Container (Interactive White & Cyan Dots) -->
+  <div id="three-bg-canvas" class="fixed inset-0 pointer-events-none z-0"></div>
 
   {% block content %}
   {% endblock %}
 
-  <!-- Custom Portfolio Scripts -->
+  <!-- Custom Scripts -->
   <script src="{% static 'js/main.js' %}"></script>
+  <script src="{% static 'js/three_scene.js' %}"></script>
 </body>
 </html>
