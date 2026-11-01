@@ -14,15 +14,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (theme === 'light') {
       htmlEl.classList.remove('dark');
       htmlEl.classList.add('light');
+      htmlEl.setAttribute('data-theme', 'light');
       localStorage.setItem('portfolio-theme', 'light');
-      document.querySelectorAll('.theme-icon-moon').forEach(el => el.classList.add('hidden'));
-      document.querySelectorAll('.theme-icon-sun').forEach(el => el.classList.remove('hidden'));
+      // In light mode: show moon icon (to switch to dark), hide sun icon
+      document.querySelectorAll('.theme-icon-moon').forEach(el => el.classList.remove('hidden'));
+      document.querySelectorAll('.theme-icon-sun').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.theme-toggle-btn').forEach(btn => btn.setAttribute('title', 'Switch to Dark Mode'));
     } else {
       htmlEl.classList.remove('light');
       htmlEl.classList.add('dark');
+      htmlEl.setAttribute('data-theme', 'dark');
       localStorage.setItem('portfolio-theme', 'dark');
-      document.querySelectorAll('.theme-icon-moon').forEach(el => el.classList.remove('hidden'));
-      document.querySelectorAll('.theme-icon-sun').forEach(el => el.classList.add('hidden'));
+      // In dark mode: show sun icon (to switch to light), hide moon icon
+      document.querySelectorAll('.theme-icon-moon').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.theme-icon-sun').forEach(el => el.classList.remove('hidden'));
+      document.querySelectorAll('.theme-toggle-btn').forEach(btn => btn.setAttribute('title', 'Switch to Light Mode'));
     }
   };
 
@@ -31,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   themeToggleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      const isDark = htmlEl.classList.contains('dark');
-      applyTheme(isDark ? 'light' : 'dark');
+      const isCurrentlyDark = htmlEl.classList.contains('dark');
+      applyTheme(isCurrentlyDark ? 'light' : 'dark');
     });
   });
 

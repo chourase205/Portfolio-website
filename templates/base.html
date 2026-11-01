@@ -29,6 +29,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
+  <!-- Immediate Theme Initializer (Zero Flash) -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('portfolio-theme') || 'dark';
+      if (saved === 'light') {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.classList.add('light');
+        document.documentElement.setAttribute('data-theme', 'light');
+      } else {
+        document.documentElement.classList.remove('light');
+        document.documentElement.classList.add('dark');
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
   <!-- Compiled Tailwind CSS from Project -->
   <link rel="stylesheet" href="{% static 'css/tailwind.css' %}" />
 

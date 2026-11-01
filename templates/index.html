@@ -42,9 +42,23 @@
     <!-- Right Controls: Theme Switcher + "Let's Connect" CTA -->
     <div class="hidden sm:flex items-center gap-3">
       <!-- Theme Switcher Button -->
-      <button type="button" class="theme-toggle-btn p-2 rounded-full border border-white/10 bg-[#0b0f19] text-cyan-400 hover:text-white hover:border-cyan-400/50 transition-all cursor-pointer select-none active:scale-95" title="Switch Theme" aria-label="Switch Theme">
-        <span class="theme-icon-moon"><i data-lucide="moon" class="w-4 h-4 text-cyan-400"></i></span>
-        <span class="theme-icon-sun hidden"><i data-lucide="sun" class="w-4 h-4 text-amber-500"></i></span>
+      <button type="button" class="theme-toggle-btn p-2 rounded-full border border-white/10 bg-[#0b0f19] hover:border-cyan-400/50 transition-all cursor-pointer select-none active:scale-95 flex items-center justify-center w-9 h-9" title="Switch Theme" aria-label="Switch Theme">
+        <!-- Sun icon (visible in dark mode) -->
+        <span class="theme-icon-sun flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-400">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path><path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path><path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        </span>
+        <!-- Moon icon (visible in light mode) -->
+        <span class="theme-icon-moon hidden flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-cyan-400">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </span>
       </button>
 
       <!-- Let's Connect Button (Bright Cyan Pill) -->
@@ -56,9 +70,21 @@
 
     <!-- Mobile Drawer Triggers -->
     <div class="flex lg:hidden items-center gap-2.5">
-      <button type="button" class="theme-toggle-btn p-2.5 rounded-xl border border-white/15 bg-slate-900/90 text-slate-300 hover:text-white transition-all" aria-label="Switch Theme">
-        <span class="theme-icon-moon"><i data-lucide="moon" class="w-4 h-4 text-cyan-400"></i></span>
-        <span class="theme-icon-sun hidden"><i data-lucide="sun" class="w-4 h-4 text-amber-500"></i></span>
+      <button type="button" class="theme-toggle-btn p-2.5 rounded-xl border border-white/15 bg-slate-900/90 text-slate-300 hover:text-white transition-all flex items-center justify-center" aria-label="Switch Theme">
+        <span class="theme-icon-sun flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-amber-400">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path><path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path><path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        </span>
+        <span class="theme-icon-moon hidden flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-cyan-400">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </span>
       </button>
 
       <button id="mobile-menu-btn" type="button" class="p-2.5 rounded-xl border border-white/15 bg-slate-900/90 text-slate-300 hover:text-white hover:border-cyan-400/40 transition-all focus:outline-none" aria-label="Open Menu">
