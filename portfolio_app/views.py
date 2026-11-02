@@ -141,6 +141,21 @@ def portfolio_index(request):
         'github_url': 'https://github.com'
     }
 
+    # Featured Projects Grid (under Production Software)
+    featured_projects = [
+        {
+            'id': 'code-crew-project',
+            'title': 'Code Crew — Online Coding Platform',
+            'badge': 'MAJOR PROJECT',
+            'icon': 'terminal',
+            'issuer': 'Major Academic Project • UIT Barkatullah University',
+            'period': '2024 — 2025',
+            'description': 'Developed a responsive frontend for a LeetCode-inspired coding platform using React.js and Tailwind CSS. Designed and implemented an admin dashboard with CRUD functionality for efficient coding problem management. Collaborated in building an intuitive, mobile-responsive interface to enhance usability and developer user experience.',
+            'skills': ['React.js', 'Tailwind CSS', 'Node.js', 'MongoDB', 'CRUD Dashboard', 'REST APIs', 'Git', 'Responsive UI'],
+            'github_url': 'https://github.com'
+        }
+    ]
+
     # Skills Matrix (5 columns matching React)
     skill_columns = [
         {
@@ -268,6 +283,7 @@ def portfolio_index(request):
         'pipeline_steps': pipeline_steps,
         'experiences': experiences,
         'flagship_project': flagship_project,
+        'featured_projects': featured_projects,
         'skill_columns': skill_columns,
         'education_info': education_info,
         'philosophies': philosophies,
