@@ -100,7 +100,7 @@ def portfolio_index(request):
                 'Engineered rich question formatting with CKEditor and normalized relational database schemas for score analytics.'
             ],
             'techs': ['Python', 'Django', 'Bootstrap', 'AWS S3', 'CKEditor', 'Excel Bulk Import', 'SQL', 'Git'],
-            'github_url': 'https://github.com/chourase205'
+            'github_url': 'https://github.com/chourase205/IntelliQuests'
         }
     ]
 

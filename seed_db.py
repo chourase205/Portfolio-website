@@ -65,7 +65,7 @@ Project.objects.create(
     features="""Built a responsive online quiz platform with user authentication, score management, and an interactive interface.
 Integrated Excel import and AWS S3 for efficient quiz and media management.
 Performed end-to-end development, testing, and deployment, ensuring a reliable and user-friendly application.""",
-    github_url='https://github.com/chourase205',
+    github_url='https://github.com/chourase205/IntelliQuests',
     order=2
 )
 
