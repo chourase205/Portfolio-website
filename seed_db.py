@@ -121,43 +121,18 @@ Education.objects.create(
     order=3
 )
 
-# Experience / Simulations
+# Experience / Major Projects
 Experience.objects.create(
-    company='AWS - Solutions Architecture Job Simulation',
-    role='Cloud Architecture Simulation',
+    company='Major Academic Project • Barkatullah University (UIT, Bhopal)',
+    role='Code Crew — Online Coding Platform',
     period='2024 — 2025',
-    location='Remote',
-    exp_type='Job Simulation',
-    description="""Gained hands-on experience in designing scalable and secure cloud-based solutions for business needs.
-Designed cloud infrastructure diagrams involving AWS EC2, S3, and RDS for high-availability workloads.
-Explored cloud architecture best practices including security, fault tolerance, and cost optimization.""",
-    skills='AWS, EC2, S3, Amazon RDS, Cloud Architecture, Security Best Practices',
+    location='Bhopal, MP, India',
+    exp_type='Major Project',
+    description="""Developed a responsive frontend for a LeetCode-inspired coding platform using React.js and Tailwind CSS.
+Designed and implemented an admin dashboard with CRUD functionality for efficient coding problem management.
+Collaborated in building an intuitive, mobile-responsive interface to enhance usability and user experience.""",
+    skills='React.js, Tailwind CSS, Node.js, MongoDB, REST APIs, CRUD Dashboard, Git, Responsive UI',
     order=1
-)
-
-Experience.objects.create(
-    company='Front-End Software Engineering Job Simulation',
-    role='Frontend Engineering Simulation',
-    period='2024 — 2025',
-    location='Remote',
-    exp_type='Job Simulation',
-    description="""Built responsive and user-friendly web interfaces using modern frameworks and best practices.
-Integrated dynamic component state, responsive design layouts, and UI accessibility standards.
-Optimized web page performance, cross-browser compatibility, and modular component architecture.""",
-    skills='React.js, JavaScript, Tailwind CSS, HTML5/CSS3, Responsive Web Design, API Integration',
-    order=2
-)
-
-Experience.objects.create(
-    company='Python Software Development',
-    role='Python Specialist',
-    period='2024',
-    location='Indore, India',
-    exp_type='Certification',
-    description="""Showcased proficient skills in Python programming, data handling, object-oriented concepts, and algorithm development.
-Developed standalone tools and integrated third-party REST APIs and speech processing libraries.""",
-    skills='Python, Object-Oriented Programming, Data Structures, API Integration, Testing & Debugging',
-    order=3
 )
 
 # Skill Categories & Skills (from resume)

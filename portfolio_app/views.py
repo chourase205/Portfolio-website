@@ -83,35 +83,24 @@ def portfolio_index(request):
         }
     ]
 
-    # Experiences / Simulations
+    # Engineering Experience / Major Project
     experiences = [
         {
-            'id': 'aws-simulation',
-            'badge': 'CLOUD ARCHITECTURE',
+            'id': 'code-crew',
+            'badge': 'MAJOR PROJECT',
             'period': '2024 – 2025',
-            'role': 'AWS - Solutions Architecture Job Simulation',
-            'company': 'Forage / Amazon Web Services (AWS)',
-            'type_badge': 'JOB SIMULATION',
-            'summary': 'Gained practical experience in designing resilient, scalable and cost-effective cloud-based solutions to fulfill enterprise requirements. Explored core AWS architectural patterns, IAM security protocols, scalable database tiering, and high-availability storage configurations.',
+            'role': 'Code Crew — Online Coding Platform',
+            'company': 'Major Academic Project • UIT Barkatullah University, Bhopal',
+            'type_badge': 'FULL STACK DEVELOPMENT',
+            'summary': 'Developed a responsive, LeetCode-inspired online coding and problem-solving platform frontend using React.js and Tailwind CSS, featuring an interactive problem workspace, problem submission architecture, and a comprehensive administrative management dashboard with CRUD functionality.',
             'highlights': [
-                'Designed secure cloud infrastructure diagrams involving Amazon EC2 compute nodes, Amazon S3 bucket storage, and RDS relational instances.',
-                'Applied AWS best practices for multi-tier isolation, least privilege security policies, fault tolerance, and workload disaster recovery.'
+                'Developed a responsive and intuitive frontend for a LeetCode-inspired coding platform using React.js and Tailwind CSS.',
+                'Designed and implemented an admin dashboard with CRUD functionality for efficient coding problem management.',
+                'Collaborated in building an intuitive, mobile-responsive interface to enhance usability and user experience.',
+                'Integrated RESTful API communication, problem cataloging, and structured database workflows for code evaluation.'
             ],
-            'techs': ['AWS', 'Amazon EC2', 'Amazon S3', 'Amazon RDS', 'Cloud Architecture', 'Security Groups']
-        },
-        {
-            'id': 'frontend-simulation',
-            'badge': 'FRONTEND ENGINEERING',
-            'period': '2024 – 2025',
-            'role': 'Front-End Software Engineering Job Simulation',
-            'company': 'Forage',
-            'type_badge': 'JOB SIMULATION',
-            'summary': 'Built responsive, intuitive, and user-friendly web interfaces implementing modern component workflows, dynamic state management, responsive UI utilities, and seamless API client integrations.',
-            'highlights': [
-                'Engineered modern responsive user interfaces with reusable React components and Tailwind CSS styling.',
-                'Integrated REST API endpoints with robust error handling, cross-browser compatibility, and accessibility standards.'
-            ],
-            'techs': ['React.js', 'JavaScript (ES6+)', 'Tailwind CSS', 'HTML5/CSS3', 'REST API Integration', 'Git']
+            'techs': ['React.js', 'Tailwind CSS', 'Node.js', 'MongoDB', 'REST APIs', 'CRUD Dashboard', 'Git', 'Responsive Design'],
+            'github_url': 'https://github.com'
         }
     ]
 
