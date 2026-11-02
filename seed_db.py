@@ -199,8 +199,8 @@ Certification.objects.create(
 )
 Certification.objects.create(
     title='HackerRank SQL (Intermediate) Certified',
-    issuer='HackerRank',
-    description='Earned intermediate certification by solving SQL and database challenges.',
+    issuer='HackerRank (Key Achievement)',
+    description='Key Achievement: Earned intermediate certification by solving complex SQL and relational database challenges.',
     order=4
 )
 

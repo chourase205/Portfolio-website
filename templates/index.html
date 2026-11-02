@@ -1010,7 +1010,7 @@
             <span class="uppercase font-bold">CREDENTIALS &amp; LICENSES</span>
           </div>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white">
-            Professional Certifications
+            Professional Certifications &amp; Achievements
           </h2>
           <p class="mt-2 text-sm sm:text-base text-slate-400">
             Validated technical competencies, industry simulations, and software assessments.
@@ -1042,8 +1042,8 @@
                 {% endif %}
               </div>
 
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-bold bg-emerald-950/60 border border-emerald-500/30 text-emerald-400">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-bold {% if cert.id == 'hackerrank-sql-cert' %}bg-amber-950/60 border border-amber-500/40 text-amber-300 shadow-[0_0_12px_rgba(245,158,11,0.25)]{% else %}bg-emerald-950/60 border border-emerald-500/30 text-emerald-400{% endif %}">
+                <span class="w-1.5 h-1.5 rounded-full {% if cert.id == 'hackerrank-sql-cert' %}bg-amber-400 shadow-[0_0_8px_#f59e0b]{% else %}bg-emerald-400{% endif %} animate-pulse"></span>
                 <span>{{ cert.badge }}</span>
               </span>
             </div>
@@ -1053,10 +1053,15 @@
               {{ cert.title }}
             </h3>
             
-            <div class="flex items-center gap-2 text-xs font-mono text-cyan-400 mb-4">
+            <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-cyan-400 mb-4">
               <span class="font-semibold">{{ cert.issuer }}</span>
               <span class="text-slate-500">•</span>
               <span class="text-slate-400">{{ cert.period }}</span>
+              {% if cert.id == 'hackerrank-sql-cert' %}
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-amber-500/15 border border-amber-500/30 text-amber-300 uppercase tracking-wide">
+                ★ ACHIEVEMENT
+              </span>
+              {% endif %}
             </div>
 
             <!-- Description -->

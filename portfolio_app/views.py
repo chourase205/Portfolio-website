@@ -276,12 +276,12 @@ def portfolio_index(request):
         {
             'id': 'hackerrank-sql-cert',
             'title': 'HackerRank SQL (Intermediate) Certified',
-            'issuer': 'HackerRank',
+            'issuer': 'HackerRank • Certified Achievement',
             'period': '2024',
-            'badge': 'ASSESSMENT CERTIFIED',
+            'badge': 'KEY ACHIEVEMENT',
             'icon': 'database',
             'accent': 'emerald',
-            'description': 'Earned intermediate-level certification through solving complex relational database queries, table joins, aggregations, and subqueries.',
+            'description': 'Verified Achievement: Earned intermediate-level certification by solving complex SQL and database challenges, table joins, aggregations, and subqueries.',
             'skills': ['SQL', 'MySQL', 'Relational Schema', 'Query Optimization', 'Subqueries & Joins'],
             'credential_url': 'https://github.com'
         }
