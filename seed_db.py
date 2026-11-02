@@ -121,17 +121,17 @@ Education.objects.create(
     order=3
 )
 
-# Experience / Major Projects
+# Experience / Cloud & Web Projects
 Experience.objects.create(
-    company='Major Academic Project • Barkatullah University (UIT, Bhopal)',
-    role='Code Crew — Online Coding Platform',
+    company='Python & Cloud Development • UIT Barkatullah University, Bhopal',
+    role='IntelliQuest — Interactive Quiz Platform with AWS S3',
     period='2024 — 2025',
     location='Bhopal, MP, India',
-    exp_type='Major Project',
-    description="""Developed a responsive frontend for a LeetCode-inspired coding platform using React.js and Tailwind CSS.
-Designed and implemented an admin dashboard with CRUD functionality for efficient coding problem management.
-Collaborated in building an intuitive, mobile-responsive interface to enhance usability and user experience.""",
-    skills='React.js, Tailwind CSS, Node.js, MongoDB, REST APIs, CRUD Dashboard, Git, Responsive UI',
+    exp_type='Web & Cloud Application',
+    description="""Built a responsive online quiz platform with user authentication, score management, and an interactive interface.
+Integrated Excel import and AWS S3 for efficient quiz and media management.
+Performed end-to-end development, testing, and deployment, ensuring a reliable and user-friendly application.""",
+    skills='Python, Django, Bootstrap, AWS S3, CKEditor, Excel Bulk Import, SQL, Git',
     order=1
 )
 

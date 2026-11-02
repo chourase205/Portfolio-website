@@ -83,23 +83,23 @@ def portfolio_index(request):
         }
     ]
 
-    # Engineering Experience / Major Project
+    # Engineering Experience / Web & Cloud Project
     experiences = [
         {
-            'id': 'code-crew',
-            'badge': 'MAJOR PROJECT',
+            'id': 'intelliquest-project',
+            'badge': 'FULL STACK & CLOUD',
             'period': '2024 – 2025',
-            'role': 'Code Crew — Online Coding Platform',
-            'company': 'Major Academic Project • UIT Barkatullah University, Bhopal',
-            'type_badge': 'FULL STACK DEVELOPMENT',
-            'summary': 'Developed a responsive, LeetCode-inspired online coding and problem-solving platform frontend using React.js and Tailwind CSS, featuring an interactive problem workspace, problem submission architecture, and a comprehensive administrative management dashboard with CRUD functionality.',
+            'role': 'IntelliQuest — Interactive Quiz Platform with AWS S3',
+            'company': 'Python & Cloud Development • UIT Barkatullah University, Bhopal',
+            'type_badge': 'PYTHON & DJANGO',
+            'summary': 'Architected and built a responsive online quiz and assessment platform utilizing Python, Django, and Bootstrap. Integrated secure user authentication, bulk question uploads via Excel import, score tracking dashboards, and Amazon Web Services (AWS S3) for high-availability media and asset storage.',
             'highlights': [
-                'Developed a responsive and intuitive frontend for a LeetCode-inspired coding platform using React.js and Tailwind CSS.',
-                'Designed and implemented an admin dashboard with CRUD functionality for efficient coding problem management.',
-                'Collaborated in building an intuitive, mobile-responsive interface to enhance usability and user experience.',
-                'Integrated RESTful API communication, problem cataloging, and structured database workflows for code evaluation.'
+                'Built a responsive online quiz platform with user authentication, score management, and an interactive interface.',
+                'Integrated Excel import functionality and AWS S3 for efficient quiz and media asset management.',
+                'Performed end-to-end development, testing, and deployment, ensuring a reliable and user-friendly application.',
+                'Engineered rich question formatting with CKEditor and normalized relational database schemas for score analytics.'
             ],
-            'techs': ['React.js', 'Tailwind CSS', 'Node.js', 'MongoDB', 'REST APIs', 'CRUD Dashboard', 'Git', 'Responsive Design'],
+            'techs': ['Python', 'Django', 'Bootstrap', 'AWS S3', 'CKEditor', 'Excel Bulk Import', 'SQL', 'Git'],
             'github_url': 'https://github.com'
         }
     ]
