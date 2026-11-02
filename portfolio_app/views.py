@@ -138,7 +138,7 @@ def portfolio_index(request):
             }
         ],
         'tech_stack': ['Python', 'Speech Recognition', 'Google Speech API', 'TTS Engine', 'NLP', 'OS Automation'],
-        'github_url': 'https://github.com/chourase205'
+        'github_url': 'https://github.com/chourase205/EchoSphere'
     }
 
     # Featured Projects Grid (under Production Software)
@@ -163,7 +163,7 @@ def portfolio_index(request):
             'period': '2024',
             'description': 'Developed an interactive and animated registration webpage using HTML5, focusing on a clean layout, responsive design, and an engaging user experience. Integrated third-party Visme registration form scripts with viewport optimization for various screen sizes, configuring full-page responsiveness and enhanced accessibility.',
             'skills': ['HTML5', 'Visme Forms', 'Responsive Web Design', 'JavaScript Integration', 'CSS3 Animations', 'UI/UX Design'],
-            'github_url': 'https://github.com/chourase205'
+            'github_url': 'https://github.com/chourase205/Animated-Registration-Form'
         }
     ]
 

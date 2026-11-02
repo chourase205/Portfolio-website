@@ -50,7 +50,7 @@ Project.objects.create(
     features="""Developed a Python-based voice assistant to perform voice-controlled tasks such as opening applications and web searching.
 Integrated Google Speech API for speech-to-text with a fallback manual input option.
 Implemented text-to-speech (TTS) and basic NLP for seamless voice interaction.""",
-    github_url='https://github.com/chourase205',
+    github_url='https://github.com/chourase205/EchoSphere',
     order=1
 )
 
@@ -96,7 +96,7 @@ Project.objects.create(
     features="""Developed an interactive and animated registration webpage using HTML5, focusing on a clean layout, responsive design, and engaging user experience.
 Integrated a third-party Visme registration form using embedded scripts to enable full form functionality with viewport optimization.
 Structured the webpage using standard HTML elements and configured the embedded form to occupy the full page for improved accessibility.""",
-    github_url='https://github.com/chourase205',
+    github_url='https://github.com/chourase205/Animated-Registration-Form',
     order=4
 )
 
