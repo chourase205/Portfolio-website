@@ -98,8 +98,7 @@ function initPortfolio() {
 
   // --- Resume Download Confetti Trigger ---
   document.querySelectorAll('.resume-download-trigger').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
+    btn.addEventListener('click', () => {
       if (typeof confetti === 'function') {
         confetti({
           particleCount: 80,
@@ -108,7 +107,6 @@ function initPortfolio() {
           colors: ['#00f0ff', '#38bdf8', '#818cf8', '#a855f7']
         });
       }
-      alert("Resume download initiated! (Connect your PDF URL in the Django admin or views.py)");
     });
   });
 

@@ -27,9 +27,9 @@ PersonalInfo.objects.create(
     email='Mayurichourase2050@gmail.com',
     phone='+91 7649864826',
     location='Indore, Madhya Pradesh, India',
-    github_url='https://github.com',
+    github_url='https://github.com/chourase205',
     linkedin_url='https://linkedin.com/in/mayuri-chourase',
-    resume_url='#resume'
+    resume_url='/static/docs/Mayuri_Chourase_Resume.pdf'
 )
 
 # Stat Items
@@ -50,7 +50,7 @@ Project.objects.create(
     features="""Developed a Python-based voice assistant to perform voice-controlled tasks such as opening applications and web searching.
 Integrated Google Speech API for speech-to-text with a fallback manual input option.
 Implemented text-to-speech (TTS) and basic NLP for seamless voice interaction.""",
-    github_url='https://github.com',
+    github_url='https://github.com/chourase205',
     order=1
 )
 
@@ -65,7 +65,7 @@ Project.objects.create(
     features="""Built a responsive online quiz platform with user authentication, score management, and an interactive interface.
 Integrated Excel import and AWS S3 for efficient quiz and media management.
 Performed end-to-end development, testing, and deployment, ensuring a reliable and user-friendly application.""",
-    github_url='https://github.com',
+    github_url='https://github.com/chourase205',
     order=2
 )
 
@@ -80,7 +80,7 @@ Project.objects.create(
     features="""Developed a responsive frontend for a LeetCode-inspired coding platform using React.js and Tailwind CSS.
 Designed and implemented an admin dashboard with CRUD functionality for efficient coding problem management.
 Collaborated in building an intuitive, mobile-responsive interface to enhance usability and user experience.""",
-    github_url='https://github.com',
+    github_url='https://github.com/chourase205',
     demo_url='https://demo.example.com',
     order=3
 )
@@ -96,7 +96,7 @@ Project.objects.create(
     features="""Developed an interactive and animated registration webpage using HTML5, focusing on a clean layout, responsive design, and engaging user experience.
 Integrated a third-party Visme registration form using embedded scripts to enable full form functionality with viewport optimization.
 Structured the webpage using standard HTML elements and configured the embedded form to occupy the full page for improved accessibility.""",
-    github_url='https://github.com',
+    github_url='https://github.com/chourase205',
     order=4
 )
 

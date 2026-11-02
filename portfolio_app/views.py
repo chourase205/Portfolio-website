@@ -22,9 +22,9 @@ def portfolio_index(request):
             email='Mayurichourase2050@gmail.com',
             phone='+91 7649864826',
             location='Indore, Madhya Pradesh, India',
-            github_url='https://github.com',
+            github_url='https://github.com/chourase205',
             linkedin_url='https://linkedin.com/in/mayuri-chourase',
-            resume_url='#resume'
+            resume_url='/static/docs/Mayuri_Chourase_Resume.pdf'
         )
 
     # 4 Key Stats (2x2 Grid)
@@ -100,7 +100,7 @@ def portfolio_index(request):
                 'Engineered rich question formatting with CKEditor and normalized relational database schemas for score analytics.'
             ],
             'techs': ['Python', 'Django', 'Bootstrap', 'AWS S3', 'CKEditor', 'Excel Bulk Import', 'SQL', 'Git'],
-            'github_url': 'https://github.com'
+            'github_url': 'https://github.com/chourase205'
         }
     ]
 
@@ -138,7 +138,7 @@ def portfolio_index(request):
             }
         ],
         'tech_stack': ['Python', 'Speech Recognition', 'Google Speech API', 'TTS Engine', 'NLP', 'OS Automation'],
-        'github_url': 'https://github.com'
+        'github_url': 'https://github.com/chourase205'
     }
 
     # Featured Projects Grid (under Production Software)
@@ -152,7 +152,7 @@ def portfolio_index(request):
             'period': '2024 — 2025',
             'description': 'Developed a responsive frontend for a LeetCode-inspired coding platform using React.js and Tailwind CSS. Designed and implemented an admin dashboard with CRUD functionality for efficient coding problem management. Collaborated in building an intuitive, mobile-responsive interface to enhance usability and developer user experience.',
             'skills': ['React.js', 'Tailwind CSS', 'Node.js', 'MongoDB', 'CRUD Dashboard', 'REST APIs', 'Git', 'Responsive UI'],
-            'github_url': 'https://github.com'
+            'github_url': 'https://github.com/chourase205'
         },
         {
             'id': 'animated-registration-form',
@@ -163,7 +163,7 @@ def portfolio_index(request):
             'period': '2024',
             'description': 'Developed an interactive and animated registration webpage using HTML5, focusing on a clean layout, responsive design, and an engaging user experience. Integrated third-party Visme registration form scripts with viewport optimization for various screen sizes, configuring full-page responsiveness and enhanced accessibility.',
             'skills': ['HTML5', 'Visme Forms', 'Responsive Web Design', 'JavaScript Integration', 'CSS3 Animations', 'UI/UX Design'],
-            'github_url': 'https://github.com'
+            'github_url': 'https://github.com/chourase205'
         }
     ]
 
@@ -247,7 +247,7 @@ def portfolio_index(request):
             'accent': 'cyan',
             'description': 'Demonstrated advanced proficiency in Python programming, data handling, object-oriented architecture, and REST API integration.',
             'skills': ['Python', 'OOP', 'Data Handling', 'API Integration', 'Testing & Debugging'],
-            'credential_url': 'https://github.com'
+            'credential_url': 'https://github.com/chourase205'
         },
         {
             'id': 'aws-simulation-cert',
@@ -259,7 +259,7 @@ def portfolio_index(request):
             'accent': 'amber',
             'description': 'Designed resilient, fault-tolerant cloud architectures using AWS EC2, Amazon S3, and RDS for high-availability production workloads.',
             'skills': ['AWS Cloud', 'Amazon EC2', 'Amazon S3', 'Amazon RDS', 'Cloud Security'],
-            'credential_url': 'https://github.com'
+            'credential_url': 'https://github.com/chourase205'
         },
         {
             'id': 'frontend-simulation-cert',
@@ -271,7 +271,7 @@ def portfolio_index(request):
             'accent': 'sky',
             'description': 'Constructed performant, responsive web applications following modern component-driven engineering principles and UI/UX design patterns.',
             'skills': ['React.js', 'JavaScript (ES6+)', 'Tailwind CSS', 'UI/UX Design', 'Responsive Web'],
-            'credential_url': 'https://github.com'
+            'credential_url': 'https://github.com/chourase205'
         },
         {
             'id': 'hackerrank-sql-cert',
@@ -283,7 +283,7 @@ def portfolio_index(request):
             'accent': 'emerald',
             'description': 'Verified Achievement: Earned intermediate-level certification by solving complex SQL and database challenges, table joins, aggregations, and subqueries.',
             'skills': ['SQL', 'MySQL', 'Relational Schema', 'Query Optimization', 'Subqueries & Joins'],
-            'credential_url': 'https://github.com'
+            'credential_url': 'https://github.com/chourase205'
         }
     ]
 

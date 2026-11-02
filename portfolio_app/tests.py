@@ -25,7 +25,7 @@ class PortfolioViewTests(TestCase):
         self.assertIn('Contact', content)
 
         # Hero
-        self.assertIn('AVAILABLE FOR SOFTWARE &amp; PYTHON ROLES', content)
+        self.assertIn('AVAILABLE FOR SOFTWARE, PYTHON &amp; AWS ROLES', content)
         self.assertIn('MAYURI', content)
         self.assertIn('CHOURASE', content)
         self.assertIn('Computer Science Graduate &amp; Software Developer', content)
