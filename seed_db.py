@@ -85,6 +85,21 @@ Collaborated in building an intuitive, mobile-responsive interface to enhance us
     order=3
 )
 
+Project.objects.create(
+    title='Animated Registration Form',
+    subtitle='Interactive Webpage with Visme Integration',
+    description='Developed an interactive and animated registration webpage using HTML5, focusing on a clean layout, responsive design, and an engaging user experience with embedded Visme form functionality.',
+    featured=False,
+    project_type='Frontend & UI/UX',
+    tech_stack='HTML5, Visme Forms, Responsive Web Design, JavaScript Integration, CSS3',
+    tags='HTML5, Visme Forms, Responsive Design, JavaScript, CSS3 Animations',
+    features="""Developed an interactive and animated registration webpage using HTML5, focusing on a clean layout, responsive design, and engaging user experience.
+Integrated a third-party Visme registration form using embedded scripts to enable full form functionality with viewport optimization.
+Structured the webpage using standard HTML elements and configured the embedded form to occupy the full page for improved accessibility.""",
+    github_url='https://github.com',
+    order=4
+)
+
 # Education
 Education.objects.create(
     degree='Bachelor of Technology (B.Tech)',

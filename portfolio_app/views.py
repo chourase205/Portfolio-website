@@ -153,6 +153,17 @@ def portfolio_index(request):
             'description': 'Developed a responsive frontend for a LeetCode-inspired coding platform using React.js and Tailwind CSS. Designed and implemented an admin dashboard with CRUD functionality for efficient coding problem management. Collaborated in building an intuitive, mobile-responsive interface to enhance usability and developer user experience.',
             'skills': ['React.js', 'Tailwind CSS', 'Node.js', 'MongoDB', 'CRUD Dashboard', 'REST APIs', 'Git', 'Responsive UI'],
             'github_url': 'https://github.com'
+        },
+        {
+            'id': 'animated-registration-form',
+            'title': 'Animated Registration Form',
+            'badge': 'FRONTEND & UI/UX',
+            'icon': 'layout',
+            'issuer': 'Interactive Web Application • Frontend Development',
+            'period': '2024',
+            'description': 'Developed an interactive and animated registration webpage using HTML5, focusing on a clean layout, responsive design, and an engaging user experience. Integrated third-party Visme registration form scripts with viewport optimization for various screen sizes, configuring full-page responsiveness and enhanced accessibility.',
+            'skills': ['HTML5', 'Visme Forms', 'Responsive Web Design', 'JavaScript Integration', 'CSS3 Animations', 'UI/UX Design'],
+            'github_url': 'https://github.com'
         }
     ]
 
